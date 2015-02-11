@@ -3,16 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Envanter Kayıt Sistemi</title>
     </h:head>
     <h:body>
-        amına koduğumun kodu çalışmadı amk.
+        Veritabanına kayıt işleminde hata meydana gelmiştir.
+        
         #{user_register.id};
         #{user_register.isim};
-       #{user_register.soyad};
+        #{user_register.soyad};
         #{user_register.email};
-       #{user_register.sifre};
-        
+        #{user_register.sifre};
+
+        <h:link value="Kayıt Sayfası" outcome="index"/>
     </h:body>
 </html>
 
