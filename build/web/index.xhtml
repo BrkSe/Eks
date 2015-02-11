@@ -5,21 +5,62 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>    
         <title>EKS V.0.0.1 </title>
+        <link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="${facesContext.externalContext.requestContextPath}/css/theme4.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
-     <h:form>
-        <h:outputText value="Adınız:"/>
-        <h:inputText value="#{user_register.id}"/>
-        <h:outputText value="Adınız:"/>
-        <h:inputText value="#{user_register.isim}"/>
-        <h:outputText value="Soyadınız"/>
-        <h:inputText value="#{user_register.soyad}"/>
-        <h:outputText value="Email:"/>
-        <h:inputText value="#{user_register.email}"/>
-        <h:outputText value="Şifre:"/>
-        <h:inputText value="#{user_register.sifre}"/>
-        <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
-        </h:form>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="theme.css"/>
+
+
+        <div id="container">
+            <div id="header">
+                <h2>Envanter Yönetim Sistemi</h2>
+                <div id="topmenu">
+                    <ul>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li class="current"><a href="#">Üye Kayıt</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="top-panel"></div>
+            <div id="wrapper">
+                <div id="content" align="center">
+                    <div id="rightnow">
+                        <h3 class="reallynow">
+                            <span>Duyurular</span><br />
+                        </h3>
+                        <p class="youhave">You have <a href="#">19 new orders</a>, <a href="#">12 new users</a> and <a href="#">5 new reviews</a>, today you made <a href="#">$1523.63 in sales</a> and a total of <strong>$328.24 profit </strong>
+                        </p>
+                    </div>
+                    <div id="infowrap">
+                        <div id="box">
+                            <h3 id="adduser">Üye Girişi</h3>
+
+                            <h:form>
+                                <h:outputText value="Adınız:"/>
+                                <h:inputText value="#{user_register.id}"/><br></br><p></p>
+                                <h:outputText value="Adınız:"/>
+                                <h:inputText value="#{user_register.isim}"/><br></br><p></p>
+                                <h:outputText value="Soyadınız"/>
+                                <h:inputText value="#{user_register.soyad}"/><br></br><p></p>
+                                <h:outputText value="Email:"/>
+                                <h:inputText value="#{user_register.email}"/><br></br><p></p>
+                                <h:outputText value="Şifre:"/>
+                                <h:inputText value="#{user_register.sifre}"/><br></br><p></p>
+                                <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                            </h:form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">Yazılım <a href="http://www.burakkutbay.com">Burak KUTBAY </a>- Tasarım <a href="http://www.bloganje.com">Bloganje</a>
+
+
+            </div>
+        </div>
     </h:body>
 </html>
 
