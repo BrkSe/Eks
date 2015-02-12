@@ -11,22 +11,20 @@
     <h:body>
         <h:outputStylesheet library="css" name="style.css"/>
         <h:outputStylesheet library="css" name="theme.css"/>
-
-
         <div id="container">
             <div id="header">
                 <h2>Envanter Yönetim Sistemi</h2>
                 <div id="topmenu">
                     <ul>
-                        <li class="current"><a href="index.xhtml">Anasayfa</a></li>
-                        <li><a href="register.xhtml">Üye Kayıt</a></li>
+                        <li class="current"><h:link value="Anasayfa" outcome="index"/></li>
+                        <li><h:link value="Kayıt Sayfası" outcome="register"/></li>
                         <li></li>
                     </ul>
                 </div>
             </div>
             <div id="top-panel"></div>
             <div id="wrapper">
-                <div id="content" align="center">
+                <div id="footer" align="center">
                     <div id="rightnow">
                         <h3 class="reallynow">
                             <span>Duyurular</span><br />
@@ -37,22 +35,18 @@
                     <div id="infowrap">
                         <div id="box">
                             <h3 id="adduser">Üye Girişi</h3>
-
                             <h:form>
                                 <h:outputText value="Email"/>
-                                <h:inputText value="#{user_register.isim}"/><br></br><p></p>
+                                <h:inputText id="email" value=""/><br></br><p></p>
                                 <h:outputText value="Şifre:"/>
-                                <h:inputText value="#{user_register.sifre}"/><br></br><p></p>
+                                <h:inputSecret id="parola" redisplay="false" value=""/><br></br><p></p>
                                 <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
                             </h:form>
-
                         </div>
                     </div>
                 </div>
             </div>
             <div id="footer">Yazılım <a href="http://www.burakkutbay.com">Burak KUTBAY </a>- Tasarım <a href="http://www.bloganje.com">Bloganje</a>
-
-
             </div>
         </div>
     </h:body>

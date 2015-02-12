@@ -18,15 +18,15 @@
                 <h2>Envanter Yönetim Sistemi</h2>
                 <div id="topmenu">
                     <ul>
-                        <li><a href="index.xhtml">Anasayfa</a></li>
-                        <li class="current"><a href="#">Üye Kayıt</a></li>
+                        <li><h:link value="Anasayfa" outcome="index"/></li>
+                        <li class="current"><h:link value="Kayıt Sayfası" outcome="register"/></li>
                         <li></li>
                     </ul>
                 </div>
             </div>
             <div id="top-panel"></div>
             <div id="wrapper">
-                <div id="content" align="center">
+                <div id="footer" align="center">
                     <div id="rightnow">
                         <h3 class="reallynow">
                             <span>Duyurular</span><br />
@@ -37,21 +37,22 @@
                     <div id="infowrap">
                         <div id="box">
                             <h3 id="adduser">Kayıt Ol</h3>
-
                             <h:form>
-                                <h:outputText value="Adınız:"/>
-                                <h:inputText value="#{user_register.id}"/><br></br><p></p>
-                                <h:outputText value="Adınız:"/>
-                                <h:inputText value="#{user_register.isim}"/><br></br><p></p>
-                                <h:outputText value="Soyadınız"/>
-                                <h:inputText value="#{user_register.soyad}"/><br></br><p></p>
-                                <h:outputText value="Email:"/>
-                                <h:inputText value="#{user_register.email}"/><br></br><p></p>
-                                <h:outputText value="Şifre:"/>
-                                <h:inputText value="#{user_register.sifre}"/><br></br><p></p>
-                                <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                                <h:panelGrid id="panel" border="0" columns="2">
+                                    <h:outputText value="Adınız:"/>                                
+                                    <h:inputText value="#{user_register.id}"/>
+                                    <h:outputText value="Adınız:"/>
+                                    <h:inputText value="#{user_register.isim}"/>
+                                    <h:outputText value="Soyadınız"/>
+                                    <h:inputText value="#{user_register.soyad}"/>
+                                    <h:outputText value="Email:"/>
+                                    <h:inputText value="#{user_register.email}"/>
+                                    <h:outputText value="Şifre:"/>
+                                    <h:inputText value="#{user_register.sifre}"/>
+                                    <h:outputLabel value="Kullanım Sözleşmesi"/>
+                                    <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                                </h:panelGrid>
                             </h:form>
-
                         </div>
                     </div>
                 </div>
