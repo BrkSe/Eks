@@ -37,9 +37,9 @@
                             <h3 id="adduser">Üye Girişi</h3>
                             <h:form>
                                 <h:outputText value="Email"/>
-                                <h:inputText id="email" value=""/><br></br><p></p>
+                                <h:inputText id="email" value="" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!" /><br></br><p></p>
                                 <h:outputText value="Şifre:"/>
-                                <h:inputSecret id="parola" redisplay="false" value=""/><br></br><p></p>
+                                <h:inputSecret id="parola" redisplay="false" value="" required="true" requiredMessage="Şifre boş geçilemez !!!" /><br></br><p></p>
                                 <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
                             </h:form>
                         </div>
