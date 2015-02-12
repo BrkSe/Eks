@@ -18,8 +18,8 @@
                 <h2>Envanter Yönetim Sistemi</h2>
                 <div id="topmenu">
                     <ul>
-                        <li class="current"><a href="index.xhtml">Anasayfa</a></li>
-                        <li><a href="register.xhtml">Üye Kayıt</a></li>
+                        <li><a href="index.xhtml">Anasayfa</a></li>
+                        <li class="current"><a href="#">Üye Kayıt</a></li>
                         <li></li>
                     </ul>
                 </div>
@@ -36,11 +36,17 @@
                     </div>
                     <div id="infowrap">
                         <div id="box">
-                            <h3 id="adduser">Üye Girişi</h3>
+                            <h3 id="adduser">Kayıt Ol</h3>
 
                             <h:form>
-                                <h:outputText value="Email"/>
+                                <h:outputText value="Adınız:"/>
+                                <h:inputText value="#{user_register.id}"/><br></br><p></p>
+                                <h:outputText value="Adınız:"/>
                                 <h:inputText value="#{user_register.isim}"/><br></br><p></p>
+                                <h:outputText value="Soyadınız"/>
+                                <h:inputText value="#{user_register.soyad}"/><br></br><p></p>
+                                <h:outputText value="Email:"/>
+                                <h:inputText value="#{user_register.email}"/><br></br><p></p>
                                 <h:outputText value="Şifre:"/>
                                 <h:inputText value="#{user_register.sifre}"/><br></br><p></p>
                                 <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
