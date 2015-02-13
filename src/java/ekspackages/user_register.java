@@ -1,6 +1,13 @@
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.sql.*;
+
+/**
+ *
+ * @author Burak KUTBAY
+ * @site www.burakkutbay.com
+ * @blog blog.burakkıtbay.com
+ */
 @ManagedBean
 @RequestScoped
 public class user_register {
