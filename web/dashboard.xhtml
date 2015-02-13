@@ -7,6 +7,13 @@
     </h:head>
     <h:body>
         Hello from Facelets
+        <h:form>
+            <h3>Sayın #{login_bean.dbad}</h3>
+            <br/>
+             <h:outputText value="This is a secured welcome page!"/>
+             <br/>
+             <h:commandLink action="#{loginBea.doLogout}" value="Logout"/>
+        </h:form>
     </h:body>
 </html>
 
