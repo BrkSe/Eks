@@ -29,7 +29,7 @@
                         <h3 class="reallynow">
                             <span>Duyurular</span><br />
                         </h3>
-                        <p class="youhave">You have <a href="#">19 new orders</a>, <a href="#">12 new users</a> and <a href="#">5 new reviews</a>, today you made <a href="#">$1523.63 in sales</a> and a total of <strong>$328.24 profit </strong>
+                        <p class="youhave"><h:outputText value="Kayıt Sistemi Güncellenmektedir!"/>
                         </p>
                     </div>
                     <div id="infowrap">
@@ -37,10 +37,10 @@
                             <h3 id="adduser">Üye Girişi</h3>
                             <h:form>
                                 <h:outputText value="Email"/>
-                                <h:inputText id="email" value="" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!" /><br></br><p></p>
+                                <h:inputText id="kullanici_adi" value="#{login_bean.kullanici_adi}" required="true" /><br></br><p></p>
                                 <h:outputText value="Şifre:"/>
-                                <h:inputSecret id="parola" redisplay="false" value="" required="true" requiredMessage="Şifre boş geçilemez !!!" /><br></br><p></p>
-                                <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                                <h:inputSecret id="sifre" value="#{login_bean.sifre}"  required="true" /><br></br><p></p>
+                                <h:commandButton action="#{login_bean.checkValidUser}" value="Giriş Yap" type="submit"/>
                             </h:form>
                         </div>
                     </div>

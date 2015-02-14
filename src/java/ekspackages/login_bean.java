@@ -85,10 +85,10 @@ public class login_bean implements  Serializable{
             if (sifre.equals(dbsifre)) {
                 return "tamam";
             } else {
-                return "invalid";
+                return "hata";
             }
         } else {
-            return "invalid";
+            return "hata";
         }
     }
     public String getDbad() {
