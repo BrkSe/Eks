@@ -26,6 +26,7 @@ public class login_bean implements  Serializable{
     private String kullanici_adi;
     private String sifre;
     private String dbad;
+    private String dbsoyad;
     private String dbemail;
     private String dbsifre;
 
@@ -42,6 +43,7 @@ public class login_bean implements  Serializable{
             rs = ps.executeQuery(SQL_Str);
             rs.next();
             dbad=rs.getString(2).toString();
+            dbsoyad=rs.getString(3).toString();
             dbemail= rs.getString(4).toString();
             dbsifre = rs.getString(5).toString();
         } catch (Exception ex) {
@@ -93,6 +95,10 @@ public class login_bean implements  Serializable{
     }
     public String getDbad() {
         return dbad;
+    }
+    
+     public String getDbsoyad() {
+        return dbsoyad;
     }
 
 }

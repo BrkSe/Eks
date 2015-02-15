@@ -3,17 +3,97 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>EKS V.0.0.1 </title>
+        <link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="${facesContext.externalContext.requestContextPath}/css/theme1.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
-        Hello from Facelets
-        <h:form>
-            <h3>Sayın #{login_bean.dbad}</h3>
-            <br/>
-             <h:outputText value="This is a secured welcome page!"/>
-             <br/>
-             <h:commandLink action="#{loginBea.doLogout}" value="Logout"/>
-        </h:form>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="theme.css"/>
+
+        <div id="container">
+            <div id="header">
+                <h2>Envanter Kayıt Sistemi</h2>
+                <div id="topmenu">
+                    <ul>
+                        <li></li>
+                        <li class="current"><a href="#">Anasayfa</a></li>
+                        <li></li>
+                        <li><a href="#">Çıkış Yap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="wrapper">
+                <div id="content">
+                    <div id="box">
+                        <h3 id="adduser">Add user</h3>
+                          <fieldset id="personal">
+                                <h:form>
+                                <h:panelGroup>
+                                <h:panelGrid id="panel" border="0" columns="2">
+                                    <h:outputText value="Ad Soyad:"/>                                
+                                    <h:inputText value="#{user_register.id}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!" style=""/>
+                                    <h:outputText value="Bilgisayar Adı:"/>
+                                    <h:inputText value="#{user_register.isim}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:outputText value="Ram (Hafıza Miktarı)"/>
+                                    <h:inputText value="#{user_register.soyad}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:outputText value="Harddisk"/>
+                                    <h:inputText value="#{user_register.email}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:outputText value="Ekran Kartı"/>
+                                    <h:inputText value="#{user_register.sifre}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:outputLabel value="Kullanım Sözleşmesi"/>
+                                    <h:inputText value="#{user_register.sifre}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:outputLabel value="Kullanım Sözleşmesi"/>
+                                    <h:inputText value="#{user_register.sifre}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                                </h:panelGrid>
+                                </h:panelGroup>
+                            </h:form>
+                            </fieldset>
+                    </div>
+                </div>
+                <div id="sidebar">
+                    <ul>
+                        <li><h3>Sayın #{login_bean.dbad} #{login_bean.dbsoyad}</h3></li><br></br>
+                            <li>
+                                <h3><a href="#" class="house">Raporlama</a></h3>
+                                <ul>
+                                    <li><a href="#" class="report">Kullanıcı Listesi</a></li>
+                                    <li><a href="#" class="report_seo">Rapor</a></li>
+                                    <li><a href="#" class="search">Arama</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3><a href="#" class="folder_table">Kayıt</a></h3>
+                                <ul>
+                                    <li><a href="#" class="addorder">Yeni Kayıt</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3><a href="#" class="manage">Yönetim</a></h3>
+                                <ul>
+                                    <li><a href="#" class="manage_page">Sayfalar</a></li>
+                                    <li><a href="#" class="cart">Ürün</a></li>
+                                    <li><a href="#" class="folder">Ürün Kategorisi</a></li>
+                                    <li><a href="#" class="promotions">İstatistikler</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h3><a href="#" class="user">Kullanıcı</a></h3>
+                                <ul>
+                                    <li><a href="#" class="useradd">Bilgi Güncelle</a></li>
+                                    <li><a href="#" class="search">Kullanıcı Ara user</a></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                    </ul>   
+                </div>
+            </div>
+            <div id="footer">
+                Template by <a href="http://www.bloganje.com">Bloganje</a>
+
+            </div>
+        </div>
     </h:body>
 </html>
 
