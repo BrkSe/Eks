@@ -8,6 +8,7 @@ package ekspackages;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.stream.Stream;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -28,6 +29,7 @@ String ram;
 String harddisk;
 String ekrankarti;
 String os;
+public String mesaj;
 int id=0;
 
 int i=0;
@@ -87,11 +89,19 @@ int i=0;
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    public String getMesaj() {
+        return mesaj;
+    }
+
+    public void setMesaj(String mesaj) {
+        this.mesaj = mesaj;
+    }
+
     
 
 public String donanimKayit()//Sayfadan girilen verileri veri tabanına gönderem metot.
-    {
+    { 
         PreparedStatement ps=null;//Veri tabanına gönderilecek bilgileri bu nesne tuttacak ve veri tabanına gönderecek.
         Connection con=null;//Veri tabanına bağlantı yapmamızı sağlayacak nesne.
         try{
@@ -125,15 +135,16 @@ public String donanimKayit()//Sayfadan girilen verileri veri tabanına gönderem
                 System.out.println(e);
             }
         }
-        if(i>0) //Sorgu başarılı olarak çalışınca i 0'dan büyük oluyor ve bizi başarılı sayfasına yönlediriyor.
+        
+        if(i>0)
         {  
-               return "kayityapildi";
+               mesaj="Kayıt İşlemi Başarılı Olmuştur";
+                return "kayityapildi";
         }
-        else //Sorgu başarısız ise başarısız sayfasına gidiyoruz.
+        else
         {
-              return "kayityapilmadi";
+            mesaj="Kayıt İşlemi Başarılı Olmamıştır.";  
+            return "kayityapilmadi";
         }
-        /*İsim ve Alani nesnelerini konsola yazdırmamın sebei xhtml içinden girdiğiniz değerler bu nesnelere
-        atanıyor mu diye kontrol amacıdır.*/
-    }
+     }
 }

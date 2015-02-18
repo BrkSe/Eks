@@ -33,27 +33,25 @@
                                 <h:panelGroup>
                                 <h:panelGrid columns="2">
                                     <h:outputText value="Kullanıcı Ad Soyad:"/>                                
-                                    <h:inputText value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!" style=""/>
+                                    <h:inputText value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
                                     <h:outputText value="Bilgisayar Adı:"/>
-                                    <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
                                     <h:outputText value="Ram (Hafıza Miktarı)"/>
-                                    <h:inputText value="#{register_hardware.ram}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:inputText value="#{register_hardware.ram}" required="true" requiredMessage="Ram Boş Geçilemez!"/>
                                     <h:outputText value="Harddisk"/>
-                                    <h:inputText value="#{register_hardware.harddisk}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:inputText value="#{register_hardware.harddisk}" required="true" requiredMessage="Harddisk Boş Geçilemez!"/>
                                     <h:outputText value="Ekran Kartı"/>
-                                    <h:inputText value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
-                                    <h:outputLabel value="İşletim Sistemi"/>
-                                    
+                                    <h:inputText value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Ekran Kartı Boş Geçilemez!"/>
+                                    <h:outputLabel value="İşletim Sistemi"/>                          
                                     <h:selectOneMenu  value="#{register_hardware.os}">
                                         <f:selectItem itemValue="Windows 7" itemLabel="Windows 7" />
                                         <f:selectItem itemValue="Windows 8}" itemLabel="Windows 8" />
-                                        <f:selectItem itemValue="Windows XP}" itemLabel="Windows XP" />
+                                        <f:selectItem itemValue="Windows XP" itemLabel="Windows XP" />
                                         <f:selectItem itemValue="Mac" itemLabel="Mac" />
                                     </h:selectOneMenu>
-
                                     <h:commandButton value="GÖNDER" action="#{register_hardware.donanimKayit()}" />
                                 </h:panelGrid>
-                                </h:panelGroup>
+                                </h:panelGroup>                                   
                             </h:form>
                             </fieldset>
                     </div>
