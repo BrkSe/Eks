@@ -68,7 +68,7 @@ int sayac=0;
         Connection con=null;//Veri tabanına bağlantı yapmamızı sağlayacak nesne.
         try{
             Class.forName("com.mysql.jdbc.Driver");//Hangi türde bir veri tabanını kullanacağını bildiriyoruz.
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eks","root","1");//Bağlanacağı veri tabanını ve kullanacağı kullanıcı adı-parolayı bildiriyoruz.
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eks","root","1111");//Bağlanacağı veri tabanını ve kullanacağı kullanıcı adı-parolayı bildiriyoruz.
             //String sql = "INSERT INTO yazarlar(Adı,Alanı) VALUES(?,?)";//Yazarlar tablosunun Adı ve Alanı sütununa değer göndereceğimi söylüyoruz.
             ps=con.prepareStatement("INSERT INTO uye_kayit(userID,Adi, Soyadi, Email, Sifre) VALUES(?,?,?,?,?)");//ps nesnesine SQL komutunu bildiriyoruz.İsterseniz parametre olarak SQL kodu yerine üstteki sql de verebilirsiniz.
              ps.setInt(1, id);
