@@ -5,6 +5,9 @@
  */
 package ekspackages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Burak KUTBAY
@@ -13,5 +16,7 @@ package ekspackages;
  */
 
 public class clientlist {
+    
+    public List<Uyeler> uyeler = new ArrayList<Uyeler>();
     
 }
