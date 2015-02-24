@@ -5,10 +5,15 @@
  */
 package ekspackages;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
 /**
  *
  * @author Brk
  */
+@ManagedBean(name = "Uyeler")
+@SessionScoped
 class Uyeler {
     
     private int userID;

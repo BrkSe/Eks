@@ -28,69 +28,50 @@
                 <div id="content">
                     <div id="box">
                         <h3 id="adduser">Envanter Ekle</h3>
-                          <fieldset id="personal">
-                              <h:outputLabel value="buradan devam amk.">buradan devam</h:outputLabel>
-                                <h:form>
-                                <h:panelGroup>
-                                <h:panelGrid columns="2">
-                                    <h:outputText value="Kullanıcı Ad Soyad:"/>                                
-                                    <h:inputText value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
-                                    <h:outputText value="Bilgisayar Adı:"/>
-                                    <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
-                                    <h:outputText value="Ram (Hafıza Miktarı)"/>
-                                    <h:inputText value="#{register_hardware.ram}" required="true" requiredMessage="Ram Boş Geçilemez!"/>
-                                    <h:outputText value="Harddisk"/>
-                                    <h:inputText value="#{register_hardware.harddisk}" required="true" requiredMessage="Harddisk Boş Geçilemez!"/>
-                                    <h:outputText value="Ekran Kartı"/>
-                                    <h:inputText value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Ekran Kartı Boş Geçilemez!"/>
-                                    <h:outputLabel value="İşletim Sistemi"/>                          
-                                    <h:selectOneMenu  value="#{register_hardware.os}">
-                                        <f:selectItem itemValue="Windows 7" itemLabel="Windows 7" />
-                                        <f:selectItem itemValue="Windows 8}" itemLabel="Windows 8" />
-                                        <f:selectItem itemValue="Windows XP" itemLabel="Windows XP" />
-                                        <f:selectItem itemValue="Mac" itemLabel="Mac" />
-                                    </h:selectOneMenu>
-                                    <h:commandButton value="GÖNDER" action="#{register_hardware.donanimKayit()}" />
-                                </h:panelGrid>
-                                </h:panelGroup>                                   
-                            </h:form>
-                            </fieldset>
+                        <fieldset id="personal">
+                            <h:dataTable value="#{clientlist()}" var="uye">
+   <h:column>    				
+      <f:facet name="header">Name</f:facet>    				
+      #{uye.adi}
+   </h:column></h:dataTable>
+                            
+                        </fieldset>
                     </div>
                 </div>
                 <div id="sidebar">
                     <ul>
                         <li><h3>Sayın #{login_bean.dbad} #{login_bean.dbsoyad}</h3></li><br></br>
-                            <li>
-                                <h3><a href="#" class="house">Raporlama</a></h3>
-                                <ul>
-                                    <li><a href="#" class="report">Kullanıcı Listesi</a></li>
-                                    <li><a href="#" class="report_seo">Rapor</a></li>
-                                    <li><a href="#" class="search">Arama</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="folder_table">Kayıt</a></h3>
-                                <ul>
-                                    <li><a href="#" class="addorder">Yeni Kayıt</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="manage">Yönetim</a></h3>
-                                <ul>
-                                    <li><a href="#" class="manage_page">Sayfalar</a></li>
-                                    <li><a href="#" class="cart">Ürün</a></li>
-                                    <li><a href="#" class="folder">Ürün Kategorisi</a></li>
-                                    <li><a href="#" class="promotions">İstatistikler</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="user">Kullanıcı</a></h3>
-                                <ul>
-                                    <li><a href="#" class="useradd">Bilgi Güncelle</a></li>
-                                    <li><a href="#" class="search">Kullanıcı Ara user</a></li>
-                                    <li></li>
-                                </ul>
-                            </li>
+                        <li>
+                            <h3><a href="#" class="house">Raporlama</a></h3>
+                            <ul>
+                                <li><a href="#" class="report">Kullanıcı Listesi</a></li>
+                                <li><a href="#" class="report_seo">Rapor</a></li>
+                                <li><a href="#" class="search">Arama</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="folder_table">Kayıt</a></h3>
+                            <ul>
+                                <li><a href="#" class="addorder">Yeni Kayıt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="manage">Yönetim</a></h3>
+                            <ul>
+                                <li><a href="#" class="manage_page">Sayfalar</a></li>
+                                <li><a href="#" class="cart">Ürün</a></li>
+                                <li><a href="#" class="folder">Ürün Kategorisi</a></li>
+                                <li><a href="#" class="promotions">İstatistikler</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="user">Kullanıcı</a></h3>
+                            <ul>
+                                <li><a href="#" class="useradd">Bilgi Güncelle</a></li>
+                                <li><a href="#" class="search">Kullanıcı Ara user</a></li>
+                                <li></li>
+                            </ul>
+                        </li>
                     </ul>   
                 </div>
             </div>
