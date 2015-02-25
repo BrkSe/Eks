@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author Brk
  */
-@ManagedBean(name = "Uyeler")
+@ManagedBean (name = "Uyeler")
 @SessionScoped
 class Uyeler {
     
@@ -20,6 +20,8 @@ class Uyeler {
     private String adi;
     private String soyadi;
     private String email;
+    private String deneme="burak";
+    
     
     public Uyeler() {    }
 
@@ -54,6 +56,15 @@ class Uyeler {
     public void setUserID(int userID) {
         this.userID = userID;
     }
+
+    public String getDeneme() {
+        return deneme;
+    }
+
+    public void setDeneme(String deneme) {
+        this.deneme = deneme;
+    }
+    
     
     
     

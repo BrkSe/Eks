@@ -29,12 +29,31 @@
                     <div id="box">
                         <h3 id="adduser">Envanter Ekle</h3>
                         <fieldset id="personal">
-                            <h:dataTable value="#{clientlist()}" var="uye">
-   <h:column>    				
-      <f:facet name="header">Name</f:facet>    				
-      #{uye.adi}
-   </h:column></h:dataTable>
-                            
+                            <h:dataTable value="#{clientlist.uyeler}" var="uye" rowClasses="satir1,satir2">
+                                <h:column>    				
+                                    <f:facet name="header">ID</f:facet>    				
+                                    
+                                </h:column>
+                                <h:column>    				
+                                    <f:facet name="header">Adı</f:facet>    				
+                                    <h:outputText value="#{uye.adi}"></h:outputText>
+                                </h:column>
+                                <h:column>    				
+                                    <f:facet name="header">Soyadı</f:facet>    				
+                                    <h:outputText value="#{uye.soyadi}"></h:outputText>
+                                </h:column>
+                                <h:column>    				
+                                    <f:facet name="header">Email</f:facet>    				
+                                    <h:outputText value="#{uye.email}"></h:outputText>
+                                </h:column>
+                                <h:column>    				
+                                    <f:facet name="header">Email</f:facet>    				
+                                    #{uye.deneme}
+                                </h:column>
+
+
+                            </h:dataTable>
+
                         </fieldset>
                     </div>
                 </div>

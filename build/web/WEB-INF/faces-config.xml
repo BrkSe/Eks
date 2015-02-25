@@ -44,5 +44,9 @@
             <to-view-id>output.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-  
+    <managed-bean>
+        <managed-bean-name>#{clientlist()}</managed-bean-name>
+        <managed-bean-class>#{clientlist()}</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>
