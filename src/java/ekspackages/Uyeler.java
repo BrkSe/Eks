@@ -4,68 +4,48 @@
  * and open the template in the editor.
  */
 package ekspackages;
-
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-
 /**
  *
  * @author Brk
  */
-@ManagedBean (name = "Uyeler")
-@SessionScoped
-class Uyeler {
-    
-    private int userID;
-    private String adi;
-    private String soyadi;
-    private String email;
-    private String deneme="burak";
-    
-    
-    public Uyeler() {    }
+public class Uyeler {
 
-    public String getAdi() {
-        return adi;
+    private int UserID;
+    private String Adi;
+    private String Soyadi;
+    private String Email;
+
+    public int getUserID() {
+        return UserID;
     }
 
-    public String getEmail() {
-        return email;
+    public void setUserID(int UserID) {
+        this.UserID = UserID;
+    }
+
+    public String getAdi() {
+        return Adi;
+    }
+
+    public void setAdi(String Adi) {
+        this.Adi = Adi;
     }
 
     public String getSoyadi() {
-        return soyadi;
+        return Soyadi;
     }
 
-    public void setAdi(String adi) {
-        this.adi = adi;
+    public void setSoyadi(String Soyadi) {
+        this.Soyadi = Soyadi;
     }
 
-    public void setSoyadi(String soyadi) {
-        this.soyadi = soyadi;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-
-    public String getDeneme() {
-        return deneme;
-    }
-
-    public void setDeneme(String deneme) {
-        this.deneme = deneme;
-    }
-    
-    
     
     
 }

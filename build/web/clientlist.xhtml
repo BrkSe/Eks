@@ -29,31 +29,32 @@
                     <div id="box">
                         <h3 id="adduser">Envanter Ekle</h3>
                         <fieldset id="personal">
-                            <h:dataTable value="#{clientlist.uyeler}" var="uye" rowClasses="satir1,satir2">
-                                <h:column>    				
-                                    <f:facet name="header">ID</f:facet>    				
-                                    
+                            <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" border="5" rows="4"><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>ID</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{yaz.userID}"/>
                                 </h:column>
-                                <h:column>    				
-                                    <f:facet name="header">Adı</f:facet>    				
-                                    <h:outputText value="#{uye.adi}"></h:outputText>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Adi</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{yaz.adi}"/>
                                 </h:column>
-                                <h:column>    				
-                                    <f:facet name="header">Soyadı</f:facet>    				
-                                    <h:outputText value="#{uye.soyadi}"></h:outputText>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Soyadi</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{yaz.soyadi}"/><!--Sütuna yazılacak değer .-->
                                 </h:column>
-                                <h:column>    				
-                                    <f:facet name="header">Email</f:facet>    				
-                                    <h:outputText value="#{uye.email}"></h:outputText>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Email</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{yaz.email}"/><!--Sütuna yazılacak değer .-->
                                 </h:column>
-                                <h:column>    				
-                                    <f:facet name="header">Email</f:facet>    				
-                                    #{uye.deneme}
-                                </h:column>
-
-
                             </h:dataTable>
-
                         </fieldset>
                     </div>
                 </div>

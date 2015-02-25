@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 /**
@@ -21,41 +22,33 @@ import javax.faces.bean.SessionScoped;
  * @site www.burakkutbay.com
  * @blog blog.burakkıtbay.com
  */
-
-@SessionScoped
+@ManagedBean(name="clientlist")
+@RequestScoped
 public class clientlist {
 
-    private List<Uyeler> uyeler = new ArrayList<Uyeler>();
+    PreparedStatement ps = null;
+    Connection con = null;
 
-    public clientlist() {
-
-        try {
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1111");//Bağlanacağı veri tabanını ve kullanacağı kullanıcı adı-parolayı bildiriyoruz.
-            PreparedStatement pr = con.prepareStatement("SELECT * FROM UYE_KAYIT");
-            ResultSet rs = pr.executeQuery();
-            
-            while (rs.next()) {
-                Uyeler uye = new Uyeler();
-                uye.setUserID(rs.getInt("userID"));
-                uye.setAdi(rs.getString("Adi"));
-                uye.setSoyadi(rs.getString("Soyadi"));
-                uye.setEmail(rs.getString("Email"));
-                uyeler.add(uye);
-                
-            }
-            rs.close();
-            pr.close();
-            con.close();
-
-        } catch (Exception e)//Hata olduğunda konsola verilecek.
+    public List<Uyeler> getUyelerTablosu() throws ClassNotFoundException, SQLException {
+        
+        Class.forName("com.mysql.jdbc.Driver");//Bağlantı
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1111");
+        ps = con.prepareStatement("SELECT * FROM uye_kayit");
+        ResultSet rs = ps.executeQuery();
+        
+        List<Uyeler> liste = new ArrayList<Uyeler>();//Sonuçlar Listeye Eklenecek
+        
+        while (rs.next())//Kayıtları döndür ve listeye ekle
         {
-            System.out.println(e);
+            Uyeler ekle = new Uyeler();
+           ekle.setUserID(rs.getInt("UserID"));
+           ekle.setAdi(rs.getString("Adi"));
+           ekle.setSoyadi(rs.getString("Soyadi"));
+           ekle.setEmail(rs.getString("Email"));
+           
+            liste.add(ekle);
         }
-
+        System.out.print(rs);
+        return liste; //Listeyi döndür
     }
-    public List<Uyeler> getUyeler() {
-        return uyeler;    }
-    public void setUyeler(List<Uyeler> uyeler) {
-        this.uyeler = uyeler;    }
 }
