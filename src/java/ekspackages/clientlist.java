@@ -21,7 +21,7 @@ import javax.faces.bean.SessionScoped;
  * @site www.burakkutbay.com
  * @blog blog.burakkıtbay.com
  */
-@ManagedBean(name = "clientlist")
+
 @SessionScoped
 public class clientlist {
 
