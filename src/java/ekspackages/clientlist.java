@@ -32,7 +32,7 @@ public class clientlist {
     public List<Uyeler> getUyelerTablosu() throws ClassNotFoundException, SQLException {
         
         Class.forName("com.mysql.jdbc.Driver");//Bağlantı
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1111");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
         ps = con.prepareStatement("SELECT * FROM uye_kayit");
         ResultSet rs = ps.executeQuery();
         

@@ -8,6 +8,41 @@
         <link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="${facesContext.externalContext.requestContextPath}/css/theme1.css" rel="stylesheet" type="text/css"/>
     </h:head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Windows 8', 3],
+          ['Windows 7', 1],
+          ['Windows XP', 1],
+          ['Mac OS', 1]
+         ]);
+
+        // Set chart options
+        var options = {'title':'İşletim Sistemleri Dağılımı',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
     <h:body>
         <h:outputStylesheet library="css" name="style.css"/>
         <h:outputStylesheet library="css" name="theme.css"/>
@@ -18,7 +53,7 @@
                 <div id="topmenu">
                     <ul>
                         <li></li>
-                        <li class="current"><a href="#">Anasayfa</a></li>
+                        <li class="current"><h:link value="Anasayfa" outcome="dashboard"/></li>
                         <li></li>
                         <li><a href="#">Çıkış Yap</a></li>
                     </ul>
@@ -27,33 +62,9 @@
             <div id="wrapper">
                 <div id="content">
                     <div id="box">
-                        <h3 id="adduser">Envanter Ekle</h3>
-                          <fieldset id="personal">
-                                <h:form>
-                                <h:panelGroup>
-                                <h:panelGrid columns="2">
-                                    <h:outputText value="Kullanıcı Ad Soyad:"/>                                
-                                    <h:inputText value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
-                                    <h:outputText value="Bilgisayar Adı:"/>
-                                    <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
-                                    <h:outputText value="Ram (Hafıza Miktarı)"/>
-                                    <h:inputText value="#{register_hardware.ram}" required="true" requiredMessage="Ram Boş Geçilemez!"/>
-                                    <h:outputText value="Harddisk"/>
-                                    <h:inputText value="#{register_hardware.harddisk}" required="true" requiredMessage="Harddisk Boş Geçilemez!"/>
-                                    <h:outputText value="Ekran Kartı"/>
-                                    <h:inputText value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Ekran Kartı Boş Geçilemez!"/>
-                                    <h:outputLabel value="İşletim Sistemi"/>                          
-                                    <h:selectOneMenu  value="#{register_hardware.os}">
-                                        <f:selectItem itemValue="Windows 7" itemLabel="Windows 7" />
-                                        <f:selectItem itemValue="Windows 8}" itemLabel="Windows 8" />
-                                        <f:selectItem itemValue="Windows XP" itemLabel="Windows XP" />
-                                        <f:selectItem itemValue="Mac" itemLabel="Mac" />
-                                    </h:selectOneMenu>
-                                    <h:commandButton value="GÖNDER" action="#{register_hardware.donanimKayit()}" />
-                                </h:panelGrid>
-                                </h:panelGroup>                                   
-                            </h:form>
-                            </fieldset>
+                        <h3 id="adduser">Genel Bakış</h3>
+                        <div id="chart_div"></div>
+                        asdasd
                     </div>
                 </div>
                 <div id="sidebar">
@@ -62,15 +73,14 @@
                             <li>
                                 <h3><a href="#" class="house">Raporlama</a></h3>
                                 <ul>
-                                    <li><h:link value="Kullanıcı Listesi" outcome="clientlist"/></li>
-                                    <li><a href="#" class="report_seo">Rapor</a></li>
+                                    <li><h:link  class="report_seo" value="Kullanıcı Listesi" outcome="clientlist"/></li>
                                     <li><a href="#" class="search">Arama</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <h3><a href="#" class="folder_table">Kayıt</a></h3>
+                                <h3><a href="#" class="folder_table">Kayıt İşlemleri</a></h3>
                                 <ul>
-                                    <li><a href="#" class="addorder">Yeni Kayıt</a></li>
+                                    <li><h:link value="Yeni Kayıt" class="addorder" outcome="registerhardware"/></li>
                                 </ul>
                             </li>
                             <li>

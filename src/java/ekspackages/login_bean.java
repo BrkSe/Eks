@@ -37,7 +37,7 @@ public class login_bean implements  Serializable{
     public void dbData(String UName) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1111");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
             ps = con.createStatement();
             String SQL_Str = "Select * from uye_kayit where Email like ('" + UName + "')";
             rs = ps.executeQuery(SQL_Str);
