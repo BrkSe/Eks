@@ -51,4 +51,5 @@ public class clientlist {
         System.out.print(rs);
         return liste; //Listeyi döndür
     }
+    
 }

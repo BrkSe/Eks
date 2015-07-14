@@ -11,37 +11,37 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript">
 
-      // Load the Visualization API and the piechart package.
-      google.load('visualization', '1.0', {'packages':['corechart']});
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1.0', {'packages': ['corechart']});
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.setOnLoadCallback(drawChart);
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Windows 8', 3],
-          ['Windows 7', 1],
-          ['Windows XP', 1],
-          ['Mac OS', 1]
-         ]);
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Windows 8', 3],
+                ['Windows 7', 1],
+                ['Windows XP', 1],
+                ['Mac OS', 1]
+            ]);
 
-        // Set chart options
-        var options = {'title':'İşletim Sistemleri Dağılımı',
-                       'width':400,
-                       'height':300};
+            // Set chart options
+            var options = {'title': 'İşletim Sistemleri Dağılımı',
+                'width': 400,
+                'height': 300};
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
     </script>
     <h:body>
         <h:outputStylesheet library="css" name="style.css"/>
@@ -63,43 +63,52 @@
                 <div id="content">
                     <div id="box">
                         <h3 id="adduser">Genel Bakış</h3>
-                        <div id="chart_div"></div>
-                        asdasd
+                       <div id="chart_div"></div>
+                       alkdsj
+                       <h:dataTable value="#{os_req.getOSdata()}" var="yaz" border="5" rows="4"><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>ID</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{yaz}"/>
+                                </h:column>
+                        </h:dataTable>
                     </div>
                 </div>
                 <div id="sidebar">
                     <ul>
                         <li><h3>Sayın #{login_bean.dbad} #{login_bean.dbsoyad}</h3></li><br></br>
-                            <li>
-                                <h3><a href="#" class="house">Raporlama</a></h3>
-                                <ul>
-                                    <li><h:link  class="report_seo" value="Kullanıcı Listesi" outcome="clientlist"/></li>
-                                    <li><a href="#" class="search">Arama</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="folder_table">Kayıt İşlemleri</a></h3>
-                                <ul>
-                                    <li><h:link value="Yeni Kayıt" class="addorder" outcome="registerhardware"/></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="manage">Yönetim</a></h3>
-                                <ul>
-                                    <li><a href="#" class="manage_page">Sayfalar</a></li>
-                                    <li><a href="#" class="cart">Ürün</a></li>
-                                    <li><a href="#" class="folder">Ürün Kategorisi</a></li>
-                                    <li><a href="#" class="promotions">İstatistikler</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3><a href="#" class="user">Kullanıcı</a></h3>
-                                <ul>
-                                    <li><a href="#" class="useradd">Bilgi Güncelle</a></li>
-                                    <li><a href="#" class="search">Kullanıcı Ara user</a></li>
-                                    <li></li>
-                                </ul>
-                            </li>
+
+                        <li>
+                            <h3><a href="#" class="house">Raporlama</a></h3>
+                            <ul>
+                                <li><h:link  class="report_seo" value="Kullanıcı Listesi" outcome="clientlist"/></li>
+                                <li><a href="#" class="search">Arama</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="folder_table">Kayıt İşlemleri</a></h3>
+                            <ul>
+                                <li><h:link value="Yeni Kayıt" class="addorder" outcome="registerhardware"/></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="manage">Yönetim</a></h3>
+                            <ul>
+                                <li><a href="#" class="manage_page">Sayfalar</a></li>
+                                <li><a href="#" class="cart">Ürün</a></li>
+                                <li><a href="#" class="folder">Ürün Kategorisi</a></li>
+                                <li><a href="#" class="promotions">İstatistikler</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3><a href="#" class="user">Kullanıcı</a></h3>
+                            <ul>
+                                <li><a href="#" class="useradd">Bilgi Güncelle</a></li>
+                                <li><a href="#" class="search">Kullanıcı Ara</a></li>
+                                <li></li>
+                            </ul>
+                        </li>
                     </ul>   
                 </div>
             </div>
