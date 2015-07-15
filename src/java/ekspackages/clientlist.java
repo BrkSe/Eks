@@ -22,7 +22,7 @@ import javax.faces.bean.SessionScoped;
  * @site www.burakkutbay.com
  * @blog blog.burakkutbay.com
  */
-@ManagedBean(name="clientlist")
+@ManagedBean(name = "clientlist")
 @RequestScoped
 public class clientlist {
 
@@ -30,26 +30,26 @@ public class clientlist {
     Connection con = null;
 
     public List<Uyeler> getUyelerTablosu() throws ClassNotFoundException, SQLException {
-        
+
         Class.forName("com.mysql.jdbc.Driver");//Bağlantı
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
         ps = con.prepareStatement("SELECT * FROM uye_kayit");
         ResultSet rs = ps.executeQuery();
-        
+
         List<Uyeler> liste = new ArrayList<Uyeler>();//Sonuçlar Listeye Eklenecek
-        
+
         while (rs.next())//Kayıtları döndür ve listeye ekle
         {
             Uyeler ekle = new Uyeler();
-           ekle.setUserID(rs.getInt("UserID"));
-           ekle.setAdi(rs.getString("Adi"));
-           ekle.setSoyadi(rs.getString("Soyadi"));
-           ekle.setEmail(rs.getString("Email"));
-           
+            ekle.setUserID(rs.getInt("UserID"));
+            ekle.setAdi(rs.getString("Adi"));
+            ekle.setSoyadi(rs.getString("Soyadi"));
+            ekle.setEmail(rs.getString("Email"));
+
             liste.add(ekle);
         }
         System.out.print(rs);
         return liste; //Listeyi döndür
     }
-    
+
 }

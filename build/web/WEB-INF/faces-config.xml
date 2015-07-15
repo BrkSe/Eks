@@ -29,7 +29,7 @@
             <from-outcome>hata</from-outcome>
             <to-view-id>invalid.xhtml</to-view-id>
         </navigation-case>
-    </navigation-rule>
+    </navigation-rule>    
     <navigation-rule>
         <from-view-id>registerhardware.xhtml</from-view-id>
         <navigation-case>

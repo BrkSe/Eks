@@ -27,15 +27,9 @@
             <div id="wrapper">
                 <div id="content">
                     <div id="box">
-                        <h3 id="adduser">Envanter Ekle</h3>
+                        <h3 id="adduser">Kullanıcı Listesi</h3>
                         <fieldset id="personal">
                             <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" border="5" rows="4"><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
-                                <h:column>
-                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
-                                        <h:outputLabel>ID</h:outputLabel><!--Sütunun başlığı.-->
-                                    </f:facet>
-                                    <h:outputLabel value="#{yaz.userID}"/>
-                                </h:column>
                                 <h:column>
                                     <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
                                         <h:outputLabel>Adi</h:outputLabel><!--Sütunun başlığı.-->
@@ -64,9 +58,8 @@
                         <li>
                             <h3><a href="#" class="house">Raporlama</a></h3>
                             <ul>
-                                <li><a href="#" class="report">Kullanıcı Listesi</a></li>
-                                <li><a href="#" class="report_seo">Rapor</a></li>
-                                <li><a href="#" class="search">Arama</a></li>
+                                <li><h:link  class="report_seo" value="Kullanıcı Listesi" outcome="clientlist"/></li>
+                                <li><h:link  class="search" value="Arama Yap" outcome="search"/></li>
                             </ul>
                         </li>
                         <li>
