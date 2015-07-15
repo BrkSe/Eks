@@ -9,3 +9,5 @@ Herhangi bir kurum ya da şirkette kullanılmamakta olup, pratik yapmak adına b
 Proje devam ederek aşama aşama kullanacağım teknolojiler şunlar olacaktır. (Planlanan)
 
 >Hibernate, Primefaces
+
+(Hibernate öncelikli olacaktır.)
