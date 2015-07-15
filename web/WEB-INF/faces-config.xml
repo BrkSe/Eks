@@ -31,15 +31,15 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>register_hardware.xhtml</from-view-id>
+        <from-view-id>registerhardware.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{registerhardware.donanimKayit()}</from-action>
+            <from-action>#{register_hardware.donanimKayit()}</from-action>
             <from-outcome>kayityapildi</from-outcome>
-            <to-view-id>output.xhtml</to-view-id>
+            <to-view-id>registerhardware.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
-            <from-action>#{registerhardware.donanimKayit()}</from-action>
+            <from-action>#{register_hardware.donanimKayit()}</from-action>
             <from-outcome>kayityapilmadi</from-outcome>
             <to-view-id>output.xhtml</to-view-id>
         </navigation-case>
