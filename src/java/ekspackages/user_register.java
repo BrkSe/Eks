@@ -6,7 +6,7 @@ import java.sql.*;
  *
  * @author Burak KUTBAY
  * @site www.burakkutbay.com
- * @blog blog.burakkıtbay.com
+ * @blog blog.burakkutbay.com
  */
 @ManagedBean
 @RequestScoped

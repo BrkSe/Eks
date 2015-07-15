@@ -13,11 +13,10 @@ import javax.faces.bean.RequestScoped;
 
 /**
  *
- * @author Brk
+ * @author Burak KUTBAY
  * @site www.burakkutbay.com
- * @blog blog.burakkıtbay.com
+ * @blog blog.burakkutbay.com
  */
-
 @ManagedBean
 @RequestScoped
 public class register_hardware {

@@ -6,7 +6,9 @@
 package ekspackages;
 /**
  *
- * @author Brk
+ * @author Burak KUTBAY
+ * @site www.burakkutbay.com
+ * @blog blog.burakkutbay.com
  */
 public class Uyeler {
 

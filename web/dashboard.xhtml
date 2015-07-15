@@ -27,16 +27,16 @@
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
-                ['Windows 8', 3],
-                ['Windows 7', 1],
-                ['Windows XP', 1],
-                ['Mac OS', 1]
+                ['Windows 8', #{os_req.OSwin8data}],
+                ['Windows 7', #{os_req.OSwin7data}],
+                ['Windows XP', #{os_req.OSwinxpdata}],
+                ['Mac OS', #{os_req.OSmacdata}]
             ]);
 
             // Set chart options
-            var options = {'title': 'İşletim Sistemleri Dağılımı',
-                'width': 400,
-                'height': 300};
+            var options = {'title': 'Kullanılan İşletim Sistemleri Dağılımı',
+                'width': 700,
+                'height': 400};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -64,15 +64,7 @@
                     <div id="box">
                         <h3 id="adduser">Genel Bakış</h3>
                        <div id="chart_div"></div>
-                       alkdsj
-                       <h:dataTable value="#{os_req.getOSdata()}" var="yaz" border="5" rows="4"><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
-                                <h:column>
-                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
-                                        <h:outputLabel>ID</h:outputLabel><!--Sütunun başlığı.-->
-                                    </f:facet>
-                                    <h:outputLabel value="#{yaz}"/>
-                                </h:column>
-                        </h:dataTable>
+                                           
                     </div>
                 </div>
                 <div id="sidebar">
