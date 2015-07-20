@@ -36,7 +36,9 @@
             // Set chart options
             var options = {'title': 'Kullanılan İşletim Sistemleri Dağılımı',
                 'width': 700,
-                'height': 400};
+                'height': 400,
+                pieSliceText: 'label',
+            is3D: true};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -63,8 +65,7 @@
                 <div id="content">
                     <div id="box">
                         <h3 id="adduser">Genel Bakış</h3>
-                       <div id="chart_div"></div>
-                                           
+                        <div id="chart_div"></div>
                     </div>
                 </div>
                 <div id="sidebar">

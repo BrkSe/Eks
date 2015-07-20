@@ -14,7 +14,7 @@ import java.sql.Statement;
 /**
  *
  * @author hasanburakkutbay
- */
+ 
 public class search_bean {
 
     String aramakriteri;
@@ -46,6 +46,8 @@ public class search_bean {
         this.os = os;
     }*/
     
+    //Bunun yapılacak çok işi var be gülüm
+  /*
     public String veriTabanindaara() throws ClassNotFoundException, SQLException{ //Sayfadan girilen verileri veri tabanına gönderem metot.
     Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
@@ -62,3 +64,4 @@ public class search_bean {
     }
 
 }
+*/
