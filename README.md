@@ -1,6 +1,8 @@
 # Eks
 Envanter Kayit Sistemi
 
+Bu proje Java web teknolojilerinden olan Java Server Faces framework'ü Kullanılarak gerçekleştirilmektedir.
+
 Ofis ya da kurum içerisinde kişilere ait  bulunan Bilgisayar'ların kayıt altına alınmasını ve özelliklerini kaydetmeye, listelemeye arama yapmayı sağlayan bir sistem olmayı amaçlayıp Java Server Faces Teknolojisinde pratik yaparak ileride kendimi geliştirmek adına değişik teknolojiler kullanmayı amaçladığım bir yazılımdır. 
 
 Herhangi bir kurum ya da şirkette kullanılmamakta olup, pratik yapmak adına bir senaryo amaçlanarak geliştirilmektedir.
