@@ -28,8 +28,7 @@
                 <div id="content">
                     <div id="box">
                         <h3 id="adduser">Kullanıcı Listesi</h3>
-                        <fieldset id="personal">
-                            <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" border="5" rows="4"><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
+                            <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" ><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
                                 <h:column>
                                     <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
                                         <h:outputLabel>Adi</h:outputLabel><!--Sütunun başlığı.-->
@@ -49,7 +48,6 @@
                                     <h:outputLabel value="#{yaz.email}"/><!--Sütuna yazılacak değer .-->
                                 </h:column>
                             </h:dataTable>
-                        </fieldset>
                     </div>
                 </div>
                 <div id="sidebar">
