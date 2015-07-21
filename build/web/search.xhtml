@@ -35,19 +35,59 @@
                             <h:panelGroup>
                                 <h:panelGrid id="panel" border="0" columns="2">
                                     <h:outputText value="Adınız:"/>
-                                    <h:inputText value="#{sear.isim}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                    <h:inputText value="#{search_bean.a1}" required="true" requiredMessage="Boş Geçilemez !!"/>
                                     <h:outputText value="Arama Kriteriniz"/>
-                                    <h:selectOneMenu value="#{user.favCoffee1}">
-                                        <f:selectItem itemValue="ka" itemLabel="Kullanıcı Adı" />
+                                    <h:selectOneMenu value="#{search_bean.a2}">
+                                        <f:selectItem itemValue="kullaniciadsoyad" itemLabel="Kullanıcı Adı" />
                                         <f:selectItem itemValue="ba" itemLabel="Bilgisayar Adı" />
                                         <f:selectItem itemValue="ia" itemLabel="İşletim Sistemi" />
                                     </h:selectOneMenu>
                                     <h:outputLabel value=""/>
-                                    <h:commandButton value="ARAMA YAP"  action="#{search_bean.veriTabaninaGonder()}"/>
+                                    <h:commandButton value="ARAMA YAP"   action="#{search_bean.veriAl()}"/>
                                 </h:panelGrid>
                             </h:panelGroup>
                         </h:form>
 
+                       
+                            <h:dataTable value="#{search_bean.sonuclarTablosu}" var="goster" ><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Adi Soyadı</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.kullaniciadsoyad}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Bilgisayar Adı</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.bilgisayar_adi}"/><!--Sütuna yazılacak değer .-->
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Ram</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.ram}"/><!--Sütuna yazılacak değer .-->
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Harddisk</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.harddisk}"/><!--Sütuna yazılacak değer .-->
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>Ekran Kartı</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.ekran_karti}"/><!--Sütuna yazılacak değer .-->
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                        <h:outputLabel>İşletim Sistemi</h:outputLabel><!--Sütunun başlığı.-->
+                                    </f:facet>
+                                    <h:outputLabel value="#{goster.os}"/><!--Sütuna yazılacak değer .-->
+                                </h:column>
+                            </h:dataTable>
+               
                     </div>
                 </div>
                 <div id="sidebar">

@@ -23,9 +23,34 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name = "search_bean")
 public class search_bean {
 
-    String aramakriteri;
     PreparedStatement ps = null;
     Connection con = null;
+    String a1,a2;
+
+    public String getA1() {
+        return a1;
+    }
+
+    public void setA1(String a1) {
+        this.a1 = a1;
+    }
+
+    public String getA2() {
+        return a2;
+    }
+
+    public void setA2(String a2) {
+        this.a2 = a2;
+    }
+    String aramakriteri, arama;
+
+    public String getArama() {
+        return arama;
+    }
+
+    public void setArama(String arama) {
+        this.arama = arama;
+    }
 
     public String getAramakriteri() {
         return aramakriteri;
@@ -35,40 +60,39 @@ public class search_bean {
         this.aramakriteri = aramakriteri;
     }
 
-    public List<Sonuclar> getSonuclarTablosu() throws ClassNotFoundException, SQLException {
+    public String veriAl() {
+        String i="1";
+        
+        a1=arama;
+        a2=aramakriteri;
+        
+       
+               return i;
+        
+       
+
+    }
+
+    public List<Donanimlar> getSonuclarTablosu() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");//Bağlantı
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
-        ps = con.prepareStatement("SELECT * FROM uye_kayit");
+        ps = con.prepareStatement("SELECT * FROM donanim_kayit WHERE " + aramakriteri + " ='" + arama + "'");
         ResultSet rs = ps.executeQuery();
 
-        List<Uyeler> liste = new ArrayList<Uyeler>();//Sonuçlar Listeye Eklenecek
+        List<Donanimlar> liste = new ArrayList<Donanimlar>();//Sonuçlar Listeye Eklenecek
 
         while (rs.next())//Kayıtları döndür ve listeye ekle
         {
-            Uyeler ekle = new Uyeler();
-            ekle.setUserID(rs.getInt("UserID"));
-            ekle.setAdi(rs.getString("Adi"));
-            ekle.setSoyadi(rs.getString("Soyadi"));
-            ekle.setEmail(rs.getString("Email"));
-
+            Donanimlar ekle = new Donanimlar();
+            ekle.setKullaniciadsoyad(rs.getString(2));
+            ekle.setBilgisayar_adi(rs.getString(3));
+            ekle.setRam(rs.getString(4));
+            ekle.setHarddisk(rs.getString(5));
+            ekle.setEkran_karti(rs.getString(6));
+            ekle.setOs(rs.getString(7));
             liste.add(ekle);
         }
-        System.out.print(rs);
         return liste; //Listeyi döndür
     }
-//Bunun yapılacak çok işi var be gülüm
- /*   public String veriTabanindaara() throws ClassNotFoundException, SQLException { //Sayfadan girilen verileri veri tabanına gönderem metot.
-     Class.forName("com.mysql.jdbc.Driver");
-     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
-     Statement s = con.createStatement();
-     try (ResultSet r = s.executeQuery("SELECT * FROM donanim_kayit WHERE '" + aramakriteri + "'='" + arama + "'")) {
-     r.next();
-     say = r.getInt(1);
-     } catch (SQLException x) {
-     System.out.println(x);
-     }
-     return say;
-     }
-     */
 }
