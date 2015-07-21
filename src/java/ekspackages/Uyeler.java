@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ekspackages;
+
 /**
  *
  * @author Burak KUTBAY
@@ -47,5 +48,5 @@ public class Uyeler {
 
     public void setEmail(String Email) {
         this.Email = Email;
-    }       
+    }
 }
