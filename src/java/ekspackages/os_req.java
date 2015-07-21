@@ -25,7 +25,7 @@ import javax.faces.bean.RequestScoped;
 
 public class os_req implements Serializable {
 
-    private int say, say1, say2, say3;
+    private int say, say1, say2, say3, pcsayisi;
 
     Connection con;
     Statement s;
@@ -84,6 +84,28 @@ public class os_req implements Serializable {
             System.out.println(x);
         }
         return say3;
+    }
+
+    public int getOSpctotal() throws ClassNotFoundException, SQLException {
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/eks", "root", "1234");
+        Statement s = con.createStatement();
+        try (ResultSet r = s.executeQuery("SELECT COUNT(*) FROM donanim_kayit")) {
+            r.next();
+            pcsayisi = r.getInt(1);
+        } catch (SQLException x) {
+            System.out.println(x);
+        }
+        return pcsayisi;
+    }
+
+    public int getPcsayisi() {
+        return pcsayisi;
+    }
+
+    public void setPcsayisi(int pcsayisi) {
+        this.pcsayisi = pcsayisi;
     }
 
     public int getSay3() {
