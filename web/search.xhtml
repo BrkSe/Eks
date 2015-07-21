@@ -35,12 +35,12 @@
                             <h:panelGroup>
                                 <h:panelGrid id="panel" border="0" columns="2">
                                     <h:outputText value="Adınız:"/>
-                                    <h:inputText value="#{search_bean.a1}" required="true" requiredMessage="Boş Geçilemez !!"/>
+                                    <h:inputText value="#{search_bean.arama}" required="true" requiredMessage="Boş Geçilemez !!"/>
                                     <h:outputText value="Arama Kriteriniz"/>
-                                    <h:selectOneMenu value="#{search_bean.a2}">
+                                    <h:selectOneMenu value="#{search_bean.aramakriteri}">
                                         <f:selectItem itemValue="kullaniciadsoyad" itemLabel="Kullanıcı Adı" />
-                                        <f:selectItem itemValue="ba" itemLabel="Bilgisayar Adı" />
-                                        <f:selectItem itemValue="ia" itemLabel="İşletim Sistemi" />
+                                        <f:selectItem itemValue="bilgisayar_adi" itemLabel="Bilgisayar Adı" />
+                                        <f:selectItem itemValue="os" itemLabel="İşletim Sistemi" />
                                     </h:selectOneMenu>
                                     <h:outputLabel value=""/>
                                     <h:commandButton value="ARAMA YAP"   action="#{search_bean.veriAl()}"/>
@@ -101,9 +101,9 @@
                             </ul>
                         </li>
                         <li>
-                            <h3><a href="#" class="folder_table">Kayıt</a></h3>
+                            <h3><a href="#" class="folder_table">Kayıt İşlemleri</a></h3>
                             <ul>
-                                <li><a href="#" class="addorder">Yeni Kayıt</a></li>
+                                <li><h:link value="Yeni Kayıt" class="addorder" outcome="registerhardware"/></li>
                             </ul>
                         </li>
                         <li>

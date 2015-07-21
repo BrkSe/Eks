@@ -28,26 +28,26 @@
                 <div id="content">
                     <div id="box">
                         <h3 id="adduser">Kullanıcı Listesi</h3>
-                            <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" ><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
-                                <h:column>
-                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
-                                        <h:outputLabel>Adi</h:outputLabel><!--Sütunun başlığı.-->
-                                    </f:facet>
-                                    <h:outputLabel value="#{yaz.adi}"/>
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
-                                        <h:outputLabel>Soyadi</h:outputLabel><!--Sütunun başlığı.-->
-                                    </f:facet>
-                                    <h:outputLabel value="#{yaz.soyadi}"/><!--Sütuna yazılacak değer .-->
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
-                                        <h:outputLabel>Email</h:outputLabel><!--Sütunun başlığı.-->
-                                    </f:facet>
-                                    <h:outputLabel value="#{yaz.email}"/><!--Sütuna yazılacak değer .-->
-                                </h:column>
-                            </h:dataTable>
+                        <h:dataTable value="#{clientlist.uyelerTablosu}" var="yaz" ><!--Sorgu sonucu düzenli olsun diye dataTable kullandık.-->3
+                            <h:column>
+                                <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                    <h:outputLabel>Adi</h:outputLabel><!--Sütunun başlığı.-->
+                                </f:facet>
+                                <h:outputLabel value="#{yaz.adi}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                    <h:outputLabel>Soyadi</h:outputLabel><!--Sütunun başlığı.-->
+                                </f:facet>
+                                <h:outputLabel value="#{yaz.soyadi}"/><!--Sütuna yazılacak değer .-->
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><!--Sütunun başlığını belirteceğimiz etiket.-->
+                                    <h:outputLabel>Email</h:outputLabel><!--Sütunun başlığı.-->
+                                </f:facet>
+                                <h:outputLabel value="#{yaz.email}"/><!--Sütuna yazılacak değer .-->
+                            </h:column>
+                        </h:dataTable>
                     </div>
                 </div>
                 <div id="sidebar">
@@ -61,9 +61,9 @@
                             </ul>
                         </li>
                         <li>
-                            <h3><a href="#" class="folder_table">Kayıt</a></h3>
+                            <h3><a href="#" class="folder_table">Kayıt İşlemleri</a></h3>
                             <ul>
-                                <li><a href="#" class="addorder">Yeni Kayıt</a></li>
+                                <li><h:link value="Yeni Kayıt" class="addorder" outcome="registerhardware"/></li>
                             </ul>
                         </li>
                         <li>

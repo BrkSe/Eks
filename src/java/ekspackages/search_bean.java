@@ -25,7 +25,7 @@ public class search_bean {
 
     PreparedStatement ps = null;
     Connection con = null;
-    String a1,a2;
+    String a1, a2;
 
     public String getA1() {
         return a1;
@@ -60,16 +60,9 @@ public class search_bean {
         this.aramakriteri = aramakriteri;
     }
 
-    public String veriAl() {
-        String i="1";
-        
-        a1=arama;
-        a2=aramakriteri;
-        
-       
-               return i;
-        
-       
+    public void veriAl() {
+        a1 = arama;
+        a2 = aramakriteri;
 
     }
 
