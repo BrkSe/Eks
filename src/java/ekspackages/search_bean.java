@@ -17,8 +17,9 @@ import javax.faces.bean.ManagedBean;
 
 /**
  *
- * @author hasanburakkutbay
- *
+ * @author Burak KUTBAY
+ * @site www.burakkutbay.com
+ * @blog blog.burakkutbay.com
  */
 @ManagedBean(name = "search_bean")
 public class search_bean {
