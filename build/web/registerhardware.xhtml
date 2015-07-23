@@ -26,22 +26,25 @@
             <div id="wrapper">
                 <div id="content">
                     <div id="box">
-                        <h3 id="adduser">Envanter Ekle</h3>
-                        <fieldset id="personal">
+                        <h3 id="adduser">Envanter Ekle</h3>       
                             <h:form>
                                 <h:panelGroup>
-                                    <h:panelGrid columns="2" >
+                                    <h:panelGrid columns="3" >
                                         <h:outputText value="Kullanıcı Ad Soyad:"/>                                
                                         <h:inputText id="a" value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
                                         <h:message for="a"></h:message>
                                         <h:outputText value="Bilgisayar Adı:"/>
-                                        <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
+                                        <h:inputText id="b" value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
+                                        <h:message for="b"></h:message>
                                         <h:outputText value="Ram (Hafıza Miktarı)"/>
-                                        <h:inputText value="#{register_hardware.ram}" required="true" requiredMessage="Ram Boş Geçilemez!"/>
+                                        <h:inputText id="c" value="#{register_hardware.ram}" required="true" requiredMessage="Ram Boş Geçilemez!"/>
+                                        <h:message for="c"></h:message>
                                         <h:outputText value="Harddisk"/>
-                                        <h:inputText value="#{register_hardware.harddisk}" required="true" requiredMessage="Harddisk Boş Geçilemez!"/>
+                                        <h:inputText id="d" value="#{register_hardware.harddisk}" required="true" requiredMessage="Harddisk Boş Geçilemez!"/>
+                                        <h:message for="d"></h:message>
                                         <h:outputText value="Ekran Kartı"/>
-                                        <h:inputText value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Ekran Kartı Boş Geçilemez!"/>
+                                        <h:inputText id="e" value="#{register_hardware.ekrankarti}" required="true" requiredMessage="Ekran Kartı Boş Geçilemez!"/>
+                                        <h:message for="e"></h:message>
                                         <h:outputLabel value="İşletim Sistemi"/>                          
                                         <h:selectOneMenu  value="#{register_hardware.os}" >
                                             <f:selectItem itemValue="Windows 7" itemLabel="Windows 7" />
@@ -50,11 +53,12 @@
                                             <f:selectItem itemValue="Mac" itemLabel="Mac" />
                                         </h:selectOneMenu>
                                         <h:outputLabel value=" "></h:outputLabel>
+                                        <h:outputLabel value=" "></h:outputLabel>
                                         <h:commandButton value="      ENVANTERE EKLE      " action="#{register_hardware.donanimKayit()}"  />
+                                        <h:outputLabel value=" "></h:outputLabel>
                                     </h:panelGrid>
                                 </h:panelGroup>                                   
                             </h:form>
-                        </fieldset>
                     </div>
                 </div>
                 <div id="sidebar">
