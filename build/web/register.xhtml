@@ -24,24 +24,28 @@
             </div>
             <div id="top-panel"></div>
             <div id="wrapper">
-                <div id="footer" align="center">
-              
+                <div id="footer" align="center">      
                     <div id="infowrap">
                         <div id="box">
                             <h3 id="adduser">Kayıt Ol</h3>
                             <h:form>
                                 <h:panelGroup>
-                                    <h:panelGrid id="panel" border="0" columns="2">
+                                    <h:panelGrid id="panel" border="0" columns="3">
                                         <h:outputText value="Adınız:"/>
-                                        <h:inputText value="#{user_register.isim}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                        <h:inputText id="a" value="#{user_register.isim}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                        <h:message for="a"></h:message>
                                         <h:outputText value="Soyadınız"/>
-                                        <h:inputText value="#{user_register.soyad}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                        <h:inputText id="b" value="#{user_register.soyad}" required="true" requiredMessage="Kullanıcı Soyadı Boş Geçilemez !!"/>
+                                        <h:message for="b"></h:message>
                                         <h:outputText value="Email:"/>
-                                        <h:inputText value="#{user_register.email}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                        <h:inputText id="c" value="#{user_register.email}" required="true" requiredMessage="E-mail Adresi Boş Geçilemez!!"/>
+                                        <h:message for="c"></h:message>
                                         <h:outputText value="Şifre:"/>
-                                        <h:inputText value="#{user_register.sifre}" required="true" requiredMessage="Kullanıcı Adı Boş Geçilemez !!"/>
+                                        <h:inputText id="d" value="#{user_register.sifre}" required="true" requiredMessage="Şifre Boş Geçilemez !!"/>
+                                        <h:message for="d"></h:message>
                                         <h:outputLabel value="Kullanım Sözleşmesi"/>
-                                        <h:commandButton value="GÖNDER" action="#{user_register.veriTabaninaGonder()}"/>
+                                        <h:commandButton value="              GÖNDER             " action="#{user_register.veriTabaninaGonder()}"/>
+                                        <h:outputLabel value=" "></h:outputLabel>
                                     </h:panelGrid>
                                 </h:panelGroup>
                             </h:form>

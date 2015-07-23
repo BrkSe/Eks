@@ -36,10 +36,11 @@
                         <div id="box">
                             <h3 id="adduser">Üye Girişi</h3>
                             <h:form>
-                                <h:outputText value="Email"/>
-                                <h:inputText id="kullanici_adi" value="#{login_bean.kullanici_adi}" required="true" /><br></br><p></p>
-                                <h:outputText value="Şifre:"/>
-                                <h:inputSecret id="sifre" value="#{login_bean.sifre}"  required="true" /><br></br><p></p>
+                                <h:outputText value="Email : "/>
+                                <h:inputText id="kullanici_adi" value="#{login_bean.kullanici_adi}" required="true" requiredMessage=" ~ Boş Geçilemez."/><h:message for="kullanici_adi"></h:message><br></br><p></p>
+                                
+                                <h:outputText value="Şifre :  "/>
+                                <h:inputSecret id="sifre" value="#{login_bean.sifre}"  required="true" requiredMessage=" ~ Boş Geçilemez." /><h:message for="sifre"></h:message><br></br><p></p>
                                 <h:commandButton action="#{login_bean.checkValidUser}" value="Giriş Yap" type="submit"/>
                             </h:form>
                         </div>
