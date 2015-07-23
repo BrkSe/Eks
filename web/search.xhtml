@@ -30,9 +30,10 @@
                                 <h3 id="box">Arama Yap</h3></br></center>
                         <h:form>
                             <h:panelGroup>
-                                <h:panelGrid id="panel" border="0" columns="2">
-                                    <h:outputText value="Adınız:"/>
-                                    <h:inputText value="#{search_bean.arama}" required="true" requiredMessage="Boş Geçilemez !!"/>
+                                <h:panelGrid id="panel" columns="3">
+                                    <h:outputText value="Aramak İstediğiniz Kelime"/>
+                                    <h:inputText id="a" value="#{search_bean.arama}" required="true" requiredMessage="Boş Geçilemez!"/>
+                                    <h:message for="a"></h:message>
                                     <h:outputText value="Arama Kriteriniz"/>
                                     <h:selectOneMenu value="#{search_bean.aramakriteri}">
                                         <f:selectItem itemValue="kullaniciadsoyad" itemLabel="Kullanıcı Adı" />
@@ -40,7 +41,9 @@
                                         <f:selectItem itemValue="os" itemLabel="İşletim Sistemi" />
                                     </h:selectOneMenu>
                                     <h:outputLabel value=""/>
-                                    <h:commandButton value="ARAMA YAP"   action="#{search_bean.veriAl()}"/>
+                                    <h:outputLabel value=""/>
+                                    <h:commandButton value="    ARAMA YAP    "   action="#{search_bean.veriAl()}"/>
+                                    <h:outputLabel value=""/>
                                 </h:panelGrid>
                             </h:panelGroup>
                         </h:form>                   
