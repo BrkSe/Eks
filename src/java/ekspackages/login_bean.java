@@ -11,10 +11,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.ejb.SessionBean;
+import javax.faces.application.ConfigurableNavigationHandler;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ComponentSystemEvent;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -122,6 +124,6 @@ public class login_bean implements Serializable {
     public String getDbsoyad() {
         return dbsoyad;
     }
-    
+
   
 }

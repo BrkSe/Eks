@@ -19,6 +19,7 @@
     
     <navigation-rule>
         <from-view-id>index.xhtml</from-view-id>
+        <managed-bean-scope>session</managed-bean-scope>
         <navigation-case>
             <from-action>#{login_bean.checkValidUser}</from-action>
             <from-outcome>tamam</from-outcome>
