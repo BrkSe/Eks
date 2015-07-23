@@ -10,8 +10,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.ejb.SessionBean;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -21,7 +25,9 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean(name = "login_bean")
 @SessionScoped
-public class login_bean implements  Serializable{
+public class login_bean implements Serializable {
+
+    private static final long serialVersionUID = 1094801825228386363L;
 
     private String kullanici_adi;
     private String sifre;
@@ -33,7 +39,7 @@ public class login_bean implements  Serializable{
     Connection con;
     Statement ps;
     ResultSet rs;
-    
+
     public void dbData(String UName) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -42,16 +48,17 @@ public class login_bean implements  Serializable{
             String SQL_Str = "Select * from uye_kayit where Email like ('" + UName + "')";
             rs = ps.executeQuery(SQL_Str);
             rs.next();
-            dbad=rs.getString(2).toString();
-            dbsoyad=rs.getString(3).toString();
-            dbemail= rs.getString(4).toString();
+            dbad = rs.getString(2).toString();
+            dbsoyad = rs.getString(3).toString();
+            dbemail = rs.getString(4).toString();
             dbsifre = rs.getString(5).toString();
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Exception Occur :" + ex);
         }
     }
-     public String getAd() {
+
+    public String getAd() {
         return dbad;
     }
 
@@ -85,20 +92,36 @@ public class login_bean implements  Serializable{
         if (kullanici_adi.equalsIgnoreCase(dbemail)) {
 
             if (sifre.equals(dbsifre)) {
+                HttpSession session = Util.getSession();
+                session.setAttribute(" kullanici_adi", kullanici_adi);
                 return "tamam";
             } else {
+                FacesContext.getCurrentInstance().addMessage(
+                        null,
+                        new FacesMessage(FacesMessage.SEVERITY_WARN,
+                                "Invalid Login!",
+                                "Please Try Again!"));
+
                 return "hata";
             }
         } else {
             return "hata";
         }
     }
+
+    public String logout() {
+        HttpSession session = Util.getSession();
+        session.invalidate();
+        return "hata";
+    }
+
     public String getDbad() {
         return dbad;
     }
-    
-     public String getDbsoyad() {
+
+    public String getDbsoyad() {
         return dbsoyad;
     }
-
+    
+  
 }

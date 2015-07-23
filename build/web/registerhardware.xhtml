@@ -32,7 +32,8 @@
                                 <h:panelGroup>
                                     <h:panelGrid columns="2" >
                                         <h:outputText value="Kullanıcı Ad Soyad:"/>                                
-                                        <h:inputText value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
+                                        <h:inputText id="a" value="#{register_hardware.adisoyadi}" required="true" requiredMessage="Kullanıcı Adı Soyadı Boş Geçilemez!" style=""/>
+                                        <h:message for="a"></h:message>
                                         <h:outputText value="Bilgisayar Adı:"/>
                                         <h:inputText value="#{register_hardware.pcadi}" required="true" requiredMessage="Bilgisayar Adı Boş Geçilemez!"/>
                                         <h:outputText value="Ram (Hafıza Miktarı)"/>
