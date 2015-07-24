@@ -7,9 +7,9 @@
         <Node id="registerhardware.xhtml" x="529" y="521" zoom="true"/>
         <Node id="register.xhtml" x="427" y="27" zoom="true"/>
         <Node id="index.xhtml" x="467" y="151" zoom="true"/>
-        <Node id="search.xhtml" x="150" y="150" zoom="true"/>
-        <Node id="clientlist.xhtml" x="650" y="150" zoom="true"/>
-        <Node id="dashboard.xhtml" x="645" y="346" zoom="false"/>
+        <Node id="clientlist.xhtml" x="871" y="134" zoom="true"/>
+        <Node id="search.xhtml" x="875" y="168" zoom="true"/>
+        <Node id="dashboard.xhtml" x="732" y="323" zoom="false"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>
