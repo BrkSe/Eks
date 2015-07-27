@@ -103,7 +103,7 @@ public class login_bean implements Serializable {
                         null,
                         new FacesMessage(FacesMessage.SEVERITY_WARN,
                                 "Invalid Login!",
-                                "Please Try Again!"));
+                                "Tekrar Deneyiniz"));
 
                 return "hata";
             }
