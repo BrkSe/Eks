@@ -90,6 +90,7 @@ public class login_bean implements Serializable {
 
     public String checkValidUser() {
         dbData(kullanici_adi);
+        
 
         if (kullanici_adi.equalsIgnoreCase(dbemail)) {
 
@@ -109,6 +110,7 @@ public class login_bean implements Serializable {
         } else {
             return "hata";
         }
+       
     }
 
     public String logout() {
