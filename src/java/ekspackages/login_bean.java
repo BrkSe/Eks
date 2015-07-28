@@ -37,6 +37,8 @@ public class login_bean implements Serializable {
     private String dbsoyad;
     private String dbemail;
     private String dbsifre;
+    public boolean isLogin;
+    
 
     Connection con;
     Statement ps;
