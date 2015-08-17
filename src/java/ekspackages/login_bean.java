@@ -38,7 +38,6 @@ public class login_bean implements Serializable {
     private String dbemail;
     private String dbsifre;
     public boolean isLogin;
-    
 
     Connection con;
     Statement ps;
@@ -92,7 +91,6 @@ public class login_bean implements Serializable {
 
     public String checkValidUser() {
         dbData(kullanici_adi);
-        
 
         if (kullanici_adi.equalsIgnoreCase(dbemail)) {
 
@@ -112,14 +110,9 @@ public class login_bean implements Serializable {
         } else {
             return "hata";
         }
-       
+
     }
 
-    public String logout() {
-        HttpSession session = Util.getSession();
-        session.invalidate();
-        return "hata";
-    }
 
     public String getDbad() {
         return dbad;
@@ -129,5 +122,4 @@ public class login_bean implements Serializable {
         return dbsoyad;
     }
 
-  
 }

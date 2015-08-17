@@ -45,10 +45,5 @@
             <to-view-id>output.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
-    
 
-    
-    
-    
-    
 </faces-config>
